@@ -20,6 +20,7 @@ login
   {% endif %}
   {% endwith %}
 <form class=" text-white py-3 px-3" action="/login" method="post">
+  <div class = 'login-form'>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control mb-3" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" required>
@@ -36,6 +37,7 @@ login
         <option value="consumer">Consumer</option>
         <option value="admin">Admin</option>
     </select>
+    </div>
 </div>
 
 <br>

@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import login_user,logout_user,login_manager,LoginManager
 from flask_login import login_required,current_user
 import os
+import pymysql
 from dotenv import load_dotenv
 
 # Load environment variables from .env
@@ -331,14 +332,24 @@ def register():
 def dashboard():
     return render_template('base.html')
 
-
-@app.route('/test')
-def test():
+@app.route('/test-db')
+def test_db():
     try:
-        Test.query.all()
-        return 'My database is Connected'
-    except:
-        return 'My db is not Connected'
+        connection = pymysql.connect(
+            host= AIVEN_HOST,
+            user= AIVEN_USER,
+            password= AIVEN_PASSWORD,
+            database=AIVEN_DB
+        )
+        return "✅ Database connected successfully!"
+
+    except pymysql.MySQLError as e:
+        return f"❌ Error: {e}"
+
+    finally:
+        if 'connection' in locals():
+            connection.close()
+
 
 
 if __name__ == "__main__":

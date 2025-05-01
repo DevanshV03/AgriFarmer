@@ -669,6 +669,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: 0.5s;
     line-height: 1;
     margin: 10px;
+    background: #198754;
     color: #fff;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
@@ -1571,6 +1572,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #198754!important;
     color: #eee;
     font-size: 14px;
@@ -1585,9 +1589,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info h3 {
+    
     font-size: 26px;
     margin: 0 0 20px 0;
-    padding: 2px 0 2px 0;
+    padding: 10px 0 10px 0;
     line-height: 1;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -1709,6 +1714,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .credits {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-size: 13px;
     color: #ddd;
